@@ -83,7 +83,7 @@ module.exports = UserController;
 ```javascript
 // services/userServices.ts
 
-const { httpError,sendSuccessResponse } = require('error-handler-express-js');
+const { errorHandler,sendSuccessResponse } = require('error-handler-express-js');
 
 const UserServices = {
 
@@ -92,7 +92,7 @@ async createUser(data) {
 
       const response = await userRepository.getUserBycode(data.code); // Data base operation
       if(response) {
-        throw new httpError().conflict('There is already a user with this code').build();
+        throw new errorHandler().conflict('There is already a user with this code').build();
       }
 
       await userRepository.createUser(data); // Data base operation
@@ -100,7 +100,7 @@ async createUser(data) {
       return sendSuccessResponse('Data saved successfully');
 
     } catch (err: any) {
-      throw new httpError().error(err, 'message').method('createUser').debug(data).build();
+      throw new errorHandler().error(err, 'message').method('createUser').debug(data).build();
     }
   }
 }

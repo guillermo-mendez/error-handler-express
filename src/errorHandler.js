@@ -1,4 +1,4 @@
-class HttpError {
+class ErrorHandler {
   constructor() {
     this.statusCode = 500;
     this.message = "Error interno del servidor";
@@ -66,4 +66,4 @@ class HttpError {
     };
   }
 }
-exports.HttpError = HttpError;
+exports.errorHandler = ErrorHandler;
