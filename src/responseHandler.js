@@ -1,5 +1,5 @@
-const sendSuccessResponse = (data, message) => {
+const responseHandler = (data, message) => {
   return { statusCode: 200, message, data };
 }
 
-module.exports = sendSuccessResponse;
+exports.responseHandler = responseHandler;
