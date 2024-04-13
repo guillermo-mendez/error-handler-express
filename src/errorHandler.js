@@ -66,4 +66,5 @@ class ErrorHandler {
     };
   }
 }
-exports.errorHandler = ErrorHandler;
+
+module.exports = new ErrorHandler();
