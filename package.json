@@ -1,0 +1,24 @@
+{
+  "name": "error-handler-express-js",
+  "version": "1.1.1",
+  "description": "error handler for express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillermo-mendez/error-handler-express-js.git"
+  },
+  "keywords": [
+    "error",
+    "handler",
+    "javascript"
+  ],
+  "author": "Guillermo Mendez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guillermo-mendez/error-handler-express-js/issues"
+  },
+  "homepage": "https://github.com/guillermo-mendez/error-handler-express-js#readme"
+}
