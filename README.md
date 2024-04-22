@@ -58,7 +58,6 @@ const router = require('express').Router();
 const { catchAsync } = require('error-handler-express-js');
 const { userController } = require('../controllers/userController');
 
-
 router.post('/create', catchAsync(userController.createUser));
 
 module.exports = router;
@@ -92,7 +91,7 @@ async createUser(data) {
 
       const response = await userRepository.getUserBycode(data.code); // Data base operation
       if(response) {
-        throw new errorHandler.conflict('There is already a user with this code').build();
+        throw errorHandler.conflict('There is already a user with this code').build();
       }
 
       await userRepository.createUser(data); // Data base operation
@@ -100,7 +99,7 @@ async createUser(data) {
       return responseHandler('Data saved successfully');
 
     } catch (err: any) {
-      throw new errorHandler.error(err, 'message').method('createUser').debug(data).build();
+      throw errorHandler.error(err, 'message').method('createUser').debug(data).build();
     }
   }
 }
